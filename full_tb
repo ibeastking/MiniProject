@@ -1,0 +1,63 @@
+`timescale 1ns / 1ps
+
+////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer:
+//
+// Create Date:   04:41:16 02/03/2023
+// Design Name:   full
+// Module Name:   full_tb.v
+// Project Name:  full
+// Target Device:  
+// Tool versions:  
+// Description: 
+//
+// Verilog Test Fixture created by ISE for module: full
+//
+// Dependencies:
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+////////////////////////////////////////////////////////////////////////////////
+
+module full_tb_v;
+
+	// Inputs
+	reg a;
+	reg b;
+	reg cin;
+
+	// Outputs
+	wire sum;
+	wire cout;
+
+	// Instantiate the Unit Under Test (UUT)
+	full uut (
+		.sum(sum), 
+		.cout(cout), 
+		.a(a), 
+		.b(b), 
+		.cin(cin)
+	);
+
+	initial begin
+		// Initialize Inputs
+		a = 0;b = 0;cin = 0;#20;
+		a = 0;b = 0;cin = 1;#20;
+		a = 0;b = 1;cin = 0;#20;
+		a = 0;b = 1;cin = 1;#20;
+		a = 1;b = 0;cin = 0;#20;
+		a = 1;b = 0;cin = 1;#20;
+		a = 1;b = 1;cin = 0;#20;
+		a = 1;b = 1;cin = 1;#20;
+
+		// Wait 100 ns for global reset to finish
+		#100;
+        
+		// Add stimulus here
+
+	end
+      
+endmodule
