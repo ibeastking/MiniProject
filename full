@@ -1,0 +1,14 @@
+//! code for full adder
+
+module full(sum,cout,a,b,cin);
+input a, b, cin;
+output sum, cout;
+
+wire s1,c1,c2;
+xor P (s1,a,b);
+and q (c1,a,b);
+xor r (sum,s1,cin);
+and s (c2,s1,cin);
+or t (cout,c1,c2);
+
+endmodule
